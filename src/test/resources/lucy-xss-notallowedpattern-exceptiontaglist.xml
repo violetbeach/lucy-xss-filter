@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config extends="hiworks-xss-asp.xml">
+    <elementRule>
+        <element name="base" disable="true" removeTag="true"/>
+    </elementRule>
+
+    <attributeRule>
+        <attribute name="src" base64Decoding="true">
+            <notAllowedPattern><![CDATA[(?i:s\\*c\\*r\\*i\\*p\\*t\\*:)]]></notAllowedPattern>
+            <notAllowedPattern exceptionTagList="img"><![CDATA[(?i:d\\*a\\*t\\*a\\*:)]]></notAllowedPattern>
+            <notAllowedPattern><![CDATA[&[#\\%x]+[\da-fA-F][\da-fA-F]+]]></notAllowedPattern>
+        </attribute>
+    </attributeRule>
+
+</config>
